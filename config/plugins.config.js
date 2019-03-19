@@ -1,0 +1,11 @@
+module.exports={
+    path:require("path"),
+    webpack:require("webpack"),
+    //自动生成html
+    HtmlWebpackPlugin:require("html-webpack-plugin"),
+    //自动清理
+    CleanWebpackPlugin:require('clean-webpack-plugin'),
+    MiniCssExtractPlugin:require("mini-css-extract-plugin"),
+    //vue配置
+    VueLoaderPlugin:require('vue-loader/lib/plugin'),
+};
