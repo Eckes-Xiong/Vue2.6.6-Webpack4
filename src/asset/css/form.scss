@@ -1,0 +1,41 @@
+.form-control,input{
+  display: inline-block;
+  border-radius:4px;
+  height:2em;
+  width:100%;
+  padding-left:.4em;
+}
+.btn,button{
+  @extend .hoverTransition;
+  display: inline-block;
+  padding: 6px 12px;
+  background: $colorHover;
+  color: #fff;
+  border:1px solid #fff;
+  border-radius:4px;
+  cursor: pointer;
+  &:hover{
+    background: #fff;
+    border-color: $colorHover;
+    color: $colorHover;
+  }
+}
+
+.form-group{
+  position: relative;
+  padding-left:120px;
+  margin-bottom:10px;
+  label{
+    position: absolute;
+    display: inline-block;
+    left:0;
+    width:100px;
+    height:2em;
+    line-height:2em;
+    text-align: right;
+    font-weight:bold;
+  }
+  &:last-child{
+    margin-bottom:0;
+  }
+}

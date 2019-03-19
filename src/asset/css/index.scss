@@ -1,0 +1,58 @@
+@charset "utf-8";
+@import "variable";
+@import "default";
+@import "form";
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+  border: 0;
+  outline: 0;
+}
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html,body{
+  padding:10px;
+  font-size:12px;
+  height:100%;
+}
+a{
+  @extend .hoverTransition;
+  color: $colorHover;
+  text-decoration:none;
+}
+a:hover{
+  color: $colorHover;
+  text-decoration:underline;
+}
+hr{
+  margin:.5em 0;
+  border-bottom:1px solid #ececec;
+}
+p{
+  margin-bottom:10px;
+}
+ul,ol,li{
+  list-style-type: none;
+}
+article{
+  text-align: left;
+  li{
+    display: inline-block;
+  }
+}
+#app{
+  height:100%;
+}
+.container{
+  position: relative;
+}
+.spinner{
+  animation:icon-spin 1s infinite linear;
+}

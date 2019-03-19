@@ -1,0 +1,23 @@
+.hoverTransition{
+  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.textEps{
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+::selection{
+  background: $colorHover;
+  color: #fff;
+}
+@-webkit-keyframes icon-spin
+{
+  0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}
+  100%{-webkit-transform:rotate(359deg);transform:rotate(359deg)}
+}
+@keyframes icon-spin
+{
+  0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}
+  100%{-webkit-transform:rotate(359deg);transform:rotate(359deg)}
+}
