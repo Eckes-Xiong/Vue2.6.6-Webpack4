@@ -1,7 +1,16 @@
-const Requires = require('./config/plugins.config');
-
+const Requires = {
+    path:require("path"),
+    webpack:require("webpack"),
+    //自动生成html
+    HtmlWebpackPlugin:require("html-webpack-plugin"),
+    //自动清理
+    CleanWebpackPlugin:require('clean-webpack-plugin'),
+    MiniCssExtractPlugin:require("mini-css-extract-plugin"),
+    //vue配置
+    VueLoaderPlugin:require('vue-loader/lib/plugin'),
+};
 //判断是否是开发环境
-const devMode = process.env.NODE_ENV !== 'production';
+const devMode = true;
 module.exports={
     mode:'production',
     context: Requires.path.resolve(__dirname, 'src'),
@@ -39,7 +48,7 @@ module.exports={
             {
                 test:/\.(sa|sc|le|c)ss$/,
                 use:[
-                    devMode?'style-loader':Requires.MiniCssExtractPlugin.loader,
+                    Requires.MiniCssExtractPlugin.loader,
                     'css-loader', 'less-loader', 'sass-loader'
                 ]
             },
@@ -78,8 +87,8 @@ module.exports={
             chunks:['admin/index']
         }),
         new Requires.MiniCssExtractPlugin({
-            filename: devMode ? '[name].css' : '[name].[hash].css',
-            chunkFilename: devMode ? '[id].css' : '[id].[hash].css'
+            filename: '[name]/[hash].css',
+            chunkFilename: '[id].[hash].css'
         }),
         new Requires.VueLoaderPlugin(),
         new Requires.webpack.DefinePlugin({
@@ -90,7 +99,7 @@ module.exports={
     ],
     devServer:{
         compress:true,
-        port:8098,
+        port:8079,
         proxy: {
             '/api': 'http://localhost:8099'
         }
