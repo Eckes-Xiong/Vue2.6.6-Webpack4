@@ -9,8 +9,7 @@ const Requires = {
     //vue配置
     VueLoaderPlugin:require('vue-loader/lib/plugin'),
 };
-//判断是否是开发环境
-const devMode = true;
+
 module.exports={
     mode:'production',
     context: Requires.path.resolve(__dirname, 'src'),
