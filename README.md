@@ -9,7 +9,7 @@
 ```js
 var a=1;
 var b=function(){
-  var c=1;
+    var c=1;
   return c;
 }
 ```
