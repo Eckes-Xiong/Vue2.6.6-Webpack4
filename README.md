@@ -5,11 +5,3 @@
 
 ## 描述
 这是一个使用node.js+vue+webpack的初级练习DEMO。可以自行模拟数据或更改接口。
-
-```js
-var a=1;
-var b=function(){
-    var c=1;
-  return c;
-}
-```
